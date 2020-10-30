@@ -69,18 +69,18 @@ router.post('/:id', (req, res, next) => {
     // findByIdAndUpdate({
     //   title: req.body.title,
     // })
-    /*****************
-     * ADD CODE HERE *
-     *****************/
+
 
 });
 
 // GET - process the delete by user id
-router.get('/delete/:id', (req, res, next) => {
+router.get('/:id', (req, res, next) => {
 
     /*****************
      * ADD CODE HERE *
      *****************/
+    res.render('books/index');
+    
 });
 
 

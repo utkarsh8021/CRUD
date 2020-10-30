@@ -33,15 +33,9 @@ router.post("/add", (req, res) => {
  });
 
 
- router.get("/edit/:id", function(req,res){
 //  Book.findById(req.params.id)
-//  .then(foundBook =>{
 //    if(!foundBook){ return res.status(404).end();}
 //    return res.status(200).json(foundBook);
-//  })
-//  .catch(err=>next(err));
-
- Book.findById(req.params.id, function(err, foundBook){
   if(err){
       res.redirect("/");
   }else{
