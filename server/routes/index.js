@@ -41,11 +41,11 @@ router.post("/add", (req, res) => {
 //  })
 //  .catch(err=>next(err));
 
- Book.findById(req.params.id, function(err, foundCampground){
+ Book.findById(req.params.id, function(err, foundBook){
   if(err){
       res.redirect("/");
   }else{
-      res.render("books/details",{books: foundCampground});
+    res.render("books/details", {title:'Edit Book Details', books: foundBook});
   }
 })
 })

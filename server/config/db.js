@@ -1,4 +1,7 @@
+
+
+dbPassword = 'mongodb+srv://pulkit1234:pulkit1234@cluster0.70zvn.mongodb.net/books229?retryWrites=true&w=majority';
+
 module.exports = {
-  //local MongoDB deployment ->
-  "URI": "mongodb://localhost/books229"
+    mongoURI: dbPassword
 };

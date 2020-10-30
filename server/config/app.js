@@ -9,15 +9,16 @@ var bodyParser = require('body-parser');
 // import "mongoose" - required for DB Access
 let mongoose = require('mongoose');
 // URI
-let DB = require('./db');
+// DB Config
+const db = require('./db').mongoURI;
 
-mongoose.connect(process.env.URI || DB.URI, {useNewUrlParser: true, useUnifiedTopology: true});
-
-let mongoDB = mongoose.connection;
-mongoDB.on('error', console.error.bind(console, 'Connection Error:'));
-mongoDB.once('open', ()=> {
-  console.log("Connected to MongoDB...");
-});
+// Connect to MongoDB
+mongoose.connect(
+    db,
+    { useNewUrlParser: true ,useUnifiedTopology: true}
+  )
+  .then(() => console.log('MongoDB Connected'))
+  .catch(err => console.log(err));
 
 
 // define routers
