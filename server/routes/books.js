@@ -2,6 +2,7 @@
 let express = require('express');
 let router = express.Router();
 let mongoose = require('mongoose');
+const { findByIdAndUpdate } = require('../models/books');
 
 router.use(express.urlencoded({extended:true}));
 
@@ -65,6 +66,9 @@ router.get('/:id', (req, res, next) => {
 // POST - process the information passed from the details form and update the document
 router.post('/:id', (req, res, next) => {
 
+    // findByIdAndUpdate({
+    //   title: req.body.title,
+    // })
     /*****************
      * ADD CODE HERE *
      *****************/
