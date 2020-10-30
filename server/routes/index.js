@@ -45,5 +45,6 @@ router.post("/add", (req, res) => {
 })
 
 
+  Book.findByIdAndRemove({_id:req.params.id}, function(err){
 
 module.exports = router;
