@@ -33,9 +33,8 @@ router.post("/add", (req, res) => {
  });
 
 
-//  Book.findById(req.params.id)
-//    if(!foundBook){ return res.status(404).end();}
-//    return res.status(200).json(foundBook);
+router.get("/edit/:id", function(req,res){
+Book.findById(req.params.id, function(err, foundBook){
   if(err){
       res.redirect("/");
   }else{
@@ -44,7 +43,14 @@ router.post("/add", (req, res) => {
 })
 })
 
-
+router.get('/delete/:id', function(req, res, next) {
   Book.findByIdAndRemove({_id:req.params.id}, function(err){
+    if(err){
+        res.redirect("/books");
+    }else{
+        res.redirect("/books");
+    }
+})
+ });
 
 module.exports = router;
