@@ -18,8 +18,8 @@
                   <th class="text-center">Price</th>
                   <th class="text-center">Author</th>
                   <th class="text-center">Genre</th>
-                  <th class="text-center"></th>
-                  <th class="text-center"></th>
+                  <th class="text-center">Edit</th>
+                  <th class="text-center">Delete</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -32,19 +32,18 @@
                   <td class="text-center"><%= books[count].genre %></td>
 
                   <td class="text-center">
-                    <!-- ------------------------ -->
-                    <!-- ADD the EDIT BUTTON HERE -->
-                    <!-- ------------------------ -->
+                    <!---------------------------->
                     <a class="btn btn-warning" href="/edit/<%=books[count]._id %>">
                       Edit
-                  </a> 
+                    </a> 
+                    <!----------------------------->
                   </td>
-
                   <td class="text-center">
-                <a class="btn btn-warning" href="/delete/<%=books[count]._id %>">
-                  Delete
-              </a> 
-
+                    <!----------------------------->
+                  <a class="btn btn-danger" href="/delete/<%=books[count]._id %>">
+                    Delete
+                  </a> 
+                  <!------------------------------->
                   </td>
                 </tr>
                 <% } %>
